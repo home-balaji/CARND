@@ -1,0 +1,17 @@
+You have to show the pipeline implementation on both the videos and please briefly(in the reflection section) describe the current pipeline you used, along-with the shortcomings(situation where the pipeline might fail or factors that might affect the pipeline) and suggestions for improving this algorithm.
+
+Implemented pipeline is pretty standard  
+
+- Convert to gray scale
+- Apply gaussian blur
+- Create Dr.Yadav filter for Yellow and White Lines
+- Apply canny transform
+- Merge Canny output with Dr.yadav's filter
+- Apply hough Transform which include region of interest
+- draw lines only for slopes in the required angles . http://ceng.anadolu.edu.tr/cv/LaneDetection/LaneDetection.htm
+- Determine lines for each frame and draw the line - remember worst case scenarios to correct incorrect lines
+- Finally combine the lines on top of the original image
+
+Pipeline fails to keep the lower end of the image to the road lines. Changing lanes may fail in the algorithm
+
+Need to improve the algorithm better learning between the images. Currently not enough information getting passed from one frame to other.
